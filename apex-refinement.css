@@ -1,0 +1,77 @@
+/* APEX atelier: restrained showroom photography and detailed care services. */
+body{background:#0b0b0b;color:#f0f0ee}
+.apex-header{height:96px;background:#080808b8;border-bottom-color:#ffffff1c}
+.apex-header nav{gap:30px}
+.apex-header nav a{color:#c7c7c7;font-size:13px}
+.apex-header nav a:hover{color:white}
+.header-cta{border-color:#777;background:transparent}
+.apex-hero{height:90svh;min-height:730px;max-height:1000px}
+.apex-hero-image{object-position:center 48%}
+.apex-hero-shade{background:linear-gradient(180deg,#03030355 0,#03030300 32%,#03030338 50%,#030303d6 100%)}
+.hero-heading{position:absolute;bottom:136px;left:0;right:0;max-width:none;padding:0 24px;text-align:center}
+.hero-label{font-size:13px;margin-bottom:19px;color:#d4d4d4}
+.hero-heading h1{font-family:Manrope,Arial,sans-serif;font-weight:500;font-size:clamp(34px,4.2vw,65px);line-height:1.15;letter-spacing:-1.8px}
+.hero-description{font-size:13px;margin-top:20px;color:#c6c6c6}
+.hero-heading .red-button{margin-top:26px;min-width:228px;justify-content:center;gap:30px;background:#b81126}
+.hero-heading .red-button:hover,.red-button:hover{background:#9e1022}
+.hero-foot{padding:23px 0;color:#9d9d9d;border-color:#ffffff30}
+.hero-foot a{font-size:13px;color:#c2c2c2}
+.section-wrap{padding-top:90px;padding-bottom:90px}
+.section-title>p,.small-label{color:#a1a1a1}
+.section-title h2,.wheel-controls h2,.approach h2{font-family:Manrope,Arial,sans-serif;font-size:clamp(32px,3.3vw,48px);line-height:1.2;font-weight:500;letter-spacing:-1.8px}
+.intro-copy p:first-child{font-size:19px;color:#d5d5d5}
+.intro-copy p+p,.service-detail p{color:#999}
+.service-list details{border-color:#333}
+.service-list details:last-child{border-color:#333}
+.service-name{font-family:Manrope,Arial,sans-serif;font-size:27px;font-weight:500;letter-spacing:-.8px}
+.service-short{color:#909090}
+.service-detail a,.service-detail button{color:#ddd;border-color:#666}
+.detailing-section{background:#101010;scroll-margin-top:0}
+.detailing-banner{height:520px;position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center}
+.detailing-banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#060606c7,#06060622 90%);z-index:-1}
+.detailing-banner>img{position:absolute;inset:0;height:100%;width:100%;object-fit:cover;object-position:center;z-index:-2}
+.detailing-banner-copy{padding:55px 6%;max-width:1500px;width:100%;margin:auto}
+.detailing-banner-copy>p{font-size:13px;color:#c8c8c8}
+.detailing-banner-copy h2{font:500 clamp(35px,4.8vw,70px)/1.12 Manrope,Arial,sans-serif;letter-spacing:-2px;margin:24px 0}
+.detailing-heading{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
+.detailing-heading .small-label{margin-bottom:22px}
+.detailing-heading h3{font-size:40px;font-weight:500;line-height:1.2;letter-spacing:-1px}
+.detailing-heading>p{max-width:480px;font-size:13px;line-height:1.9;color:#aaa}
+.care-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:55px;border-bottom:1px solid #3c3c3c}
+.care-tabs button{position:relative;padding:23px 18px 23px 0;display:flex;gap:16px;align-items:center;text-align:left;background:transparent;color:#929292;font-size:13px;border-bottom:2px solid transparent;margin-bottom:-1px}
+.care-tabs button>span{font-size:13px;color:#727272}
+.care-tabs button[aria-selected=true]{border-bottom-color:#c31a31;color:white}
+.care-tabs button[aria-selected=true]>span{color:#e3384e}
+.care-tabs button:hover{color:white}
+.care-panel{min-height:250px;padding:43px 0;display:grid;grid-template-columns:1.2fr 1fr;gap:90px;align-items:center}
+.care-step{display:block;font-size:13px;color:#949494;margin-bottom:20px}
+.care-panel h4{font-size:28px;font-weight:500;line-height:1.2;letter-spacing:-.6px;margin:0 0 17px}
+.care-panel p{font-size:13px;color:#aaa;line-height:1.9;max-width:550px}
+.care-panel ul{margin:0;padding:0;list-style:none;max-width:420px;width:100%;justify-self:end}
+.care-panel li{font-size:13px;line-height:1.7;border-bottom:1px solid #2d2d2d;padding:14px 0;color:#c3c3c3}
+.care-panel li:before{content:"";display:inline-block;width:5px;height:5px;background:#ba162d;margin-right:14px;vertical-align:2px}
+.care-bottom{display:flex;justify-content:space-between;align-items:center;gap:30px;border-top:1px solid #343434;padding-top:30px}
+.care-bottom>p{font-size:13px;line-height:1.9;color:#8f8f8f}
+.red-button{background:#b81126}
+.wheel-controls{background:#181818}
+.wheel-controls h2{font-size:45px;line-height:1.15}
+.approach .process-steps li{border-color:#343434}
+.process-steps p{color:#a0a0a0}
+.apex-cta{background:#171717;border-top:1px solid #343434}
+.apex-cta>p{color:#a6a6a6}
+.apex-cta h2{font-family:Manrope,Arial,sans-serif;font-size:clamp(38px,4.5vw,64px);font-weight:500;line-height:1.2;letter-spacing:-2px}
+.apex-cta .light-button{background:#b81126;color:white;justify-content:center;gap:36px}
+.apex-cta .light-button:hover{background:#9e1022}
+.apex-footer{background:#080808}
+@media(max-width:1050px){.apex-header nav{gap:18px}.detailing-banner{height:450px}.care-tabs button{font-size:13px;gap:10px}.care-panel{gap:45px}.section-wrap{padding-top:70px;padding-bottom:70px}.service-name{font-size:25px}}
+@media(max-width:680px){.apex-header{height:80px}.apex-hero{height:760px;min-height:690px}.apex-hero-image{object-position:59% center}.apex-hero-shade{background:linear-gradient(180deg,#0003 0,#0000 36%,#000c 88%)}.hero-heading{bottom:115px;padding:0 20px}.hero-label{font-size:13px;margin-bottom:16px}.hero-heading h1{font-size:34px;line-height:1.16;letter-spacing:-1.2px}.hero-description{font-size:13px;line-height:1.8;max-width:270px;margin:18px auto 0}.hero-foot{font-size:13px;padding:19px 0;gap:20px}.hero-foot>span{display:none}.hero-foot a{font-size:13px;gap:20px}.section-wrap{padding-top:55px;padding-bottom:55px}.section-title h2{font-size:35px;letter-spacing:-1px}.intro-copy p:first-child{font-size:17px}.service-name{font-size:24px}.detailing-banner{height:380px}.detailing-banner>img{object-position:62% center}.detailing-banner-copy{padding:35px 22px}.detailing-banner-copy>p{font-size:13px}.detailing-banner-copy h2{font-size:34px;letter-spacing:-1.1px;margin:22px 0}.detailing-heading{display:block}.detailing-heading h3{font-size:33px}.detailing-heading>p{font-size:13px;margin-top:25px}.care-tabs{margin-top:33px;grid-template-columns:1fr 1fr;gap:0 20px;border-bottom:0}.care-tabs button{border-bottom:1px solid #393939;font-size:13px;padding:18px 0;gap:12px;margin:0}.care-tabs button[aria-selected=true]{border-bottom:1px solid #d8283f}.care-panel{display:block;min-height:370px;padding:32px 0}.care-panel h4{font-size:25px}.care-panel p{font-size:13px}.care-panel ul{margin-top:23px;max-width:none}.care-panel li{font-size:13px;padding:10px 0}.care-bottom{align-items:start;flex-direction:column;padding-top:25px;gap:22px}.care-bottom>p{font-size:13px}.care-bottom .red-button{width:100%}.wheel-controls h2{font-size:39px}.apex-cta h2{font-size:37px;letter-spacing:-1.2px}}
+
+.hero-description, .intro-copy p + p, .service-detail p, .detailing-heading > p,
+.care-panel p, .care-panel li, .care-bottom > p, .control-description,
+.process-steps p, dialog p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.hero-description { color: white; text-shadow: 0 1px 5px #000; }
+.care-tabs button { white-space: normal; text-align: left; }
+.finish-options { flex-wrap: wrap; }

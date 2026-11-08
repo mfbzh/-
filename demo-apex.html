@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' ; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data:; media-src 'self' data:; form-action 'self'; base-uri 'none'; object-src 'none'"><meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <title>APEX — тюнинг-ателье · Пример сайта</title>
+  <meta name="description" content="Демонстрационный сайт тюнинг-ателье APEX: кованые диски, стайлинг и уход за автомобилем.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="apex.css">
+  <link rel="stylesheet" href="apex-refinement.css">
+  <script src="apex.js" defer></script>
+<style>:focus-visible{outline:3px solid #b85b20;outline-offset:3px}.marks-grid p{line-height:1.55}.archive .tools>*{min-height:40px}.archive .tools input{min-width:0}.archive .rights a:focus-visible{outline:3px solid #bd5c24}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}</style></head>
+<body>
+  <a class="skip-link" href="#services">К содержанию</a>
+  <header class="apex-header">
+    <a class="apex-logo" href="#top" aria-label="APEX, на главную">APEX<span></span></a>
+    <nav aria-label="Навигация ателье"><a href="#services">Тюнинг</a><a href="#detailing">Детейлинг</a><a href="#wheels">Диски</a><a href="#approach">Подход</a></nav>
+    <button class="header-cta" data-open-brief>Обсудить проект <span class="apex-arrow" aria-hidden="true"></span></button>
+  </header>
+  <main id="top">
+    <section class="apex-hero" aria-labelledby="apex-title">
+      <img class="apex-hero-image" src="assets/apex-car.jpg" alt="Графитовый спортивный автомобиль с коваными дисками в студии" fetchpriority="high">
+      <div class="apex-hero-shade"></div>
+      <div class="hero-heading"><p class="hero-label">Тюнинг-ателье APEX</p><h1 id="apex-title">ВАШ АВТОМОБИЛЬ.<br>НОВЫЙ ХАРАКТЕР.</h1><p class="hero-description">Индивидуальный стайлинг, кованые диски и бережный уход.</p><a class="red-button" href="#services">Открыть направления <span class="apex-arrow" aria-hidden="true"></span></a></div>
+      <div class="hero-foot"><span>Индивидуальный проект</span><a href="#detailing">Детейлинг и защита <span aria-hidden="true">↓</span></a><a href="#wheels">Кованые диски <span aria-hidden="true">↓</span></a></div>
+    </section>
+    <section class="intro section-wrap" id="services">
+      <div class="section-title"><p>Направления</p><h2>Ваш автомобиль.<br>Ваша версия.</h2></div>
+      <div class="intro-copy"><p>Пропорции, посадка, фактура. Хороший тюнинг складывается из решений, которые работают вместе.</p><p>От выбора рисунка дисков до финишного покрытия кузова — продумываем образ целиком и согласовываем каждую деталь до начала работ.</p></div>
+      <div class="service-list">
+        <details><summary><span class="service-name">Кованые диски</span><span class="service-short">Рисунок, размер и финиш</span><span class="plus" aria-hidden="true">+</span></summary><div class="service-detail"><p>Подбор дизайна, диаметра и оттенка. Перед изготовлением уточняются параметры автомобиля, вылет, ширина и совместимость с тормозной системой.</p><a href="#wheels">Собрать свой вариант <span class="apex-arrow" aria-hidden="true"></span></a></div></details>
+        <details><summary><span class="service-name">Стайлинг кузова</span><span class="service-short">Цвет, карбон и аэродинамика</span><span class="plus" aria-hidden="true">+</span></summary><div class="service-detail"><p>Виниловая плёнка, декоративные элементы и карбоновые акценты. Подбираем сочетание материалов, которое поддерживает линии автомобиля.</p><button data-open-brief data-service="Стайлинг кузова">Обсудить образ <span class="apex-arrow" aria-hidden="true"></span></button></div></details>
+        <details><summary><span class="service-name">Детейлинг</span><span class="service-short">Чистота и защита поверхности</span><span class="plus" aria-hidden="true">+</span></summary><div class="service-detail"><p>Восстановительная полировка, защитные покрытия и уход за интерьером. Состав работ подбирается после осмотра состояния автомобиля.</p><a href="#detailing">Подробнее об уходе <span class="apex-arrow" aria-hidden="true"></span></a></div></details>
+      </div>
+    </section>
+    <section class="detailing-section" id="detailing" aria-labelledby="detailing-title">
+      <div class="detailing-banner">
+        <img src="assets/apex-detailing.jpg" alt="Нанесение защитного покрытия на графитовый кузов автомобиля" loading="lazy">
+        <div class="detailing-banner-copy"><p>Детейлинг APEX</p><h2 id="detailing-title">СОХРАНИТЬ<br>СОВЕРШЕНСТВО.</h2><p>Уход, который заметен в каждой детали.</p></div>
+      </div>
+      <div class="detailing-content section-wrap">
+        <div class="detailing-heading"><div><p class="small-label">Подготовка к хранению</p><h3>До следующего<br>сезона.</h3></div><p>Продуманный уход перед паузой: чистый кузов, свежий салон и защита поверхностей. Состав комплекса согласовывается после осмотра автомобиля.</p></div>
+        <div class="care-tabs" role="tablist" aria-label="Этапы подготовки автомобиля"><button id="care-tab-0" role="tab" aria-selected="true" aria-controls="care-panel" tabindex="0" data-care="0"><span>01</span>Очистка кузова</button><button id="care-tab-1" role="tab" aria-selected="false" aria-controls="care-panel" tabindex="-1" data-care="1"><span>02</span>Уход за салоном</button><button id="care-tab-2" role="tab" aria-selected="false" aria-controls="care-panel" tabindex="-1" data-care="2"><span>03</span>Полировка</button><button id="care-tab-3" role="tab" aria-selected="false" aria-controls="care-panel" tabindex="-1" data-care="3"><span>04</span>Защитное покрытие</button></div>
+        <div class="care-panel" id="care-panel" role="tabpanel" aria-labelledby="care-tab-0" tabindex="0"><div><span class="care-step" id="care-step">01 / 04</span><h4 id="care-title">Чистая основа.</h4><p id="care-description">Деликатная мойка и удаление стойких загрязнений с кузова и дисков. Перед следующим этапом поверхность проверяется при направленном свете.</p></div><ul id="care-includes"><li>Кузов и колёсные арки</li><li>Диски и труднодоступные зоны</li><li>Проверка состояния покрытия</li></ul></div>
+        <div class="care-bottom"><p>Сначала осмотр и план работ.<br>Затем — согласование материалов и стоимости.</p><button class="red-button" data-open-brief data-service="Подготовка автомобиля к хранению">Обсудить комплекс <span class="apex-arrow" aria-hidden="true"></span></button></div>
+      </div>
+    </section>
+    <section class="wheel-section" id="wheels" aria-labelledby="wheel-title">
+      <div class="wheel-studio">
+        <div class="studio-top"><span>APEX FORGED</span><span id="wheel-code">AF.01 / SPLIT</span></div>
+        <svg id="wheel-preview" class="wheel-svg" viewBox="0 0 600 600" role="img" aria-label="Диск Split, сатин, 20 дюймов">
+          <defs><radialGradient id="tire"><stop offset=".64" stop-color="#161616"/><stop offset=".8" stop-color="#333"/><stop offset=".91" stop-color="#171717"/><stop offset="1" stop-color="#070707"/></radialGradient><linearGradient id="rim" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".25" stop-color="#9b9fa3"/><stop offset=".5" stop-color="#fafafa"/><stop offset=".75" stop-color="#787e84"/><stop offset="1" stop-color="#d8dce0"/></linearGradient><linearGradient id="spoke" x1="0" y1="0" x2="1" y2="1"><stop class="metal-light" stop-color="#e5e7e9"/><stop class="metal-mid" offset=".45" stop-color="#a2a8ae"/><stop class="metal-dark" offset="1" stop-color="#4e545b"/></linearGradient><radialGradient id="rotor"><stop stop-color="#727679"/><stop offset="1" stop-color="#343638"/></radialGradient></defs>
+          <ellipse cx="300" cy="550" rx="190" ry="15" fill="#000" opacity=".12"/>
+          <g id="wheel-disc"><circle cx="300" cy="291" r="247" fill="url(#tire)"/><circle cx="300" cy="291" r="223" fill="none" stroke="#777" stroke-width="1" opacity=".4"/><circle cx="300" cy="291" r="208" fill="#060606" stroke="url(#rim)" stroke-width="13"/><circle cx="300" cy="291" r="184" fill="url(#rotor)" stroke="#999" stroke-width="2"/><circle cx="300" cy="291" r="153" fill="none" stroke="#a5a7a9" stroke-width="2" stroke-dasharray="2 12"/><path d="M449 205 Q483 237 480 283 L449 302 L424 275 L427 217Z" fill="#d12c27"/><g id="wheel-spokes" fill="url(#spoke)" stroke="#8b9095" stroke-width="1"></g><circle cx="300" cy="291" r="53" fill="url(#spoke)" stroke="#b3b6ba" stroke-width="2"/><g fill="#151515"><circle cx="300" cy="251" r="6"/><circle cx="338" cy="279" r="6"/><circle cx="324" cy="323" r="6"/><circle cx="276" cy="323" r="6"/><circle cx="262" cy="279" r="6"/></g><circle cx="300" cy="291" r="26" fill="#171717" stroke="#9da1a5"/><text x="300" y="296" text-anchor="middle" fill="#f7f7f7" font-family="Arial,sans-serif" font-size="12" font-weight="700" font-style="italic">APEX</text></g>
+        </svg>
+        <div class="studio-bottom"><span>Визуальный подбор</span><span>Поверните идею в свою сторону.</span></div>
+      </div>
+      <div class="wheel-controls"><p class="small-label">Кованые диски</p><h2 id="wheel-title">Начните<br>с правильной<br>посадки.</h2><p class="control-description">Выберите характер диска.<br>Остальные параметры подберём под автомобиль.</p>
+        <fieldset class="model-options"><legend>Дизайн</legend><button type="button" data-model="split" aria-pressed="true">Split</button><button type="button" data-model="mesh" aria-pressed="false">Mesh</button><button type="button" data-model="blade" aria-pressed="false">Blade</button></fieldset>
+        <fieldset class="size-options"><legend>Диаметр</legend><button type="button" data-size="20" aria-pressed="true">20″</button><button type="button" data-size="21" aria-pressed="false">21″</button><button type="button" data-size="22" aria-pressed="false">22″</button></fieldset>
+        <fieldset class="finish-options"><legend>Покрытие</legend><button type="button" data-finish="satin" aria-pressed="true"><i style="--swatch:#bbc0c5"></i>Сатин</button><button type="button" data-finish="black" aria-pressed="false"><i style="--swatch:#35383c"></i>Графит</button><button type="button" data-finish="bronze" aria-pressed="false"><i style="--swatch:#9a7753"></i>Бронза</button></fieldset>
+        <p class="selection-summary" id="selection-summary" aria-live="polite">Split / 20″ / Сатин</p><button class="red-button" id="choose-wheel">Выбрать этот вариант <span class="apex-arrow" aria-hidden="true"></span></button><p class="config-note">Демонстрация подбора. Техническая совместимость проверяется отдельно.</p>
+      </div>
+    </section>
+    <section class="approach section-wrap" id="approach"><div class="section-title"><p>От идеи к результату</p><h2>Сначала образ.<br>Затем — детали.</h2></div><ol class="process-steps"><li><span>01</span><h3>Знакомимся с автомобилем</h3><p>Обсуждаем пожелания, привычный стиль вождения и задачи проекта.</p></li><li><span>02</span><h3>Собираем концепцию</h3><p>Согласовываем сочетание дисков, материалов и оттенков, объём работ и смету.</p></li><li><span>03</span><h3>Доводим до результата</h3><p>Проверяем посадку и зазоры, подгоняем элементы и оцениваем финальный вид.</p></li></ol></section>
+    <section class="apex-cta"><p>Индивидуальное предложение</p><h2>Детали решают.<br>Начнём с ваших.</h2><button class="light-button" data-open-brief>Собрать проект <span class="apex-arrow" aria-hidden="true"></span></button></section>
+  </main>
+  <footer class="apex-footer"><a class="apex-logo" href="#top">APEX<span></span></a><p>APEX — вымышленное тюнинг-ателье.<br>Данный сайт создан для примера.</p><a class="back-link" href="index.html#projects" target="_top">Вернуться в портфолио <span class="apex-arrow" aria-hidden="true"></span></a></footer>
+  <dialog id="brief-dialog" aria-labelledby="brief-title"><button class="dialog-close" aria-label="Закрыть окно">×</button><p class="small-label">Пример сайта тюнинг-ателье</p><h2 id="brief-title">Ваша идея<br>приобретает форму.</h2><p id="brief-selection"></p><p>В рабочем сайте здесь можно оставить заявку и обсудить детали с ателье. В этом примере данные не собираются и не отправляются.</p><a class="red-button" href="index.html#contact" target="_top">Обсудить похожий сайт <span class="apex-arrow" aria-hidden="true"></span></a><button class="continue-button">Продолжить просмотр</button></dialog>
+</body>
+</html>
