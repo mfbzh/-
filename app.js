@@ -1,3 +1,26 @@
+const caseFacts = {
+ apex: [['Задача','Показать услуги вымышленного тюнинг-ателье.'],['Реализация','Адаптивная страница, подбор рисунка, размера и покрытия дисков, переключение этапов ухода.'],['Результат','Рабочий демонстрационный интерфейс без отправки заявок.']],
+ library: [['Задача','Сделать интерактивный каталог классической литературы.'],['Реализация','Книжная карусель, поиск по тексту, фильтры по автору и жанру, карточки произведений.'],['Результат','Демоверсия с восемью произведениями и ссылками на чтение.']],
+ barber: [['Задача','Показать визуальное направление сайта барбершопа.'],['Реализация','Оформление первого экрана для телефона: заголовок, описание и акцент на записи.'],['Результат','Изображение макета. Полный работающий сайт в этом кейсе не представлен.']],
+ reels: [['Задача','Оформить разговорное видео об интерьере.'],['Реализация','Смена планов, монтаж, субтитры и графическое оформление.'],['Результат','Вертикальный ролик длительностью 45 секунд; пример доступен ниже.']],
+ book: [['Задача','Оформить книгу по тексту и иллюстрациям автора.'],['Реализация','Вёрстка заголовков, основного текста и иллюстраций.'],['Результат','Форматы Word и PDF. Здесь представлены отдельные страницы.']]
+};
+function renderCase(target,id){
+ target.replaceChildren(...caseFacts[id].flatMap(([label,value])=>{
+  const dt=document.createElement('dt'),dd=document.createElement('dd');
+  dt.textContent=label;dd.textContent=value;return [dt,dd];
+ }));
+}
+function setProjectMedia(id){
+ const host=document.querySelector('#dialog-media');host.replaceChildren();
+ if(id==='reels'){
+  const video=document.createElement('video');video.className='modal-video';video.controls=true;video.playsInline=true;video.preload='metadata';video.poster='assets/reels.jpg';video.src='assets/reels.mp4';
+  host.append(video);return;
+ }
+ const stack=document.createElement('div');stack.className='dialog-media-stack'+(id==='barber'?' barber':'');
+ const files=id==='barber'?[['barber.jpg','Первый экран сайта Кремень']]:[['book-cover.jpg','Обложка книги'],['book-page.jpg','Страница об авторе'],['book-detail.jpg','Пример оформления книги']];
+ files.forEach(([file,alt])=>{const img=document.createElement('img');img.src='assets/'+file;img.alt=alt;img.loading='lazy';stack.append(img)});host.append(stack);
+}
 document.querySelectorAll('.mark-card').forEach(button => {
   button.addEventListener('click', () => {
     const viewer = document.getElementById('mark-view');
@@ -16,9 +39,9 @@ const projects = {
   },
   barber: {
     title: 'Кремень. Сайт барбершопа', category: 'Сайт · Демопроект',
-    description: 'Одностраничный сайт с услугами, ценами и переходом к записи через Telegram. Тёмно-зелёная палитра, золотистые акценты и адаптация для телефона. Ниже — первый экран проекта.',
+    description: 'Визуальный концепт первого экрана барбершопа. Тёмно-зелёная палитра, золотистые акценты и кнопка записи. Ниже — изображение макета.',
     media: '<div class="dialog-media-stack barber"><img src="assets/barber.jpg" alt="Первый экран сайта Кремень"></div>',
-    note: 'Показан интерфейс проекта. Telegram-бот демонстрационной версии отключён.'
+    note: 'Представлен макет первого экрана, а не полноценная демоверсия сайта.'
   },
   reels: {
     title: 'В кадре — главное', category: 'Видео · Монтаж разговорного Reels',
@@ -47,7 +70,8 @@ function openProject(id, trigger) {
   document.querySelector('#dialog-title').textContent = project.title;
   document.querySelector('#dialog-category').textContent = project.category;
   document.querySelector('#dialog-description').textContent = project.description;
-  document.querySelector('#dialog-media').innerHTML = project.media;
+  renderCase(document.querySelector('#dialog-case'),id);
+  setProjectMedia(id);
   document.querySelector('#dialog-note').textContent = project.note;
   dialog.showModal();
   document.body.classList.add('modal-open');
@@ -58,7 +82,7 @@ function closeProject() { dialog.close(); }
 document.querySelectorAll('[data-project]').forEach(button => button.addEventListener('click', () => openProject(button.dataset.project, button)));
 document.querySelector('.close-dialog').addEventListener('click', closeProject);
 dialog.addEventListener('click', event => { if (event.target === dialog) { const rect = dialog.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeProject(); } });
-dialog.addEventListener('close', () => { document.querySelectorAll('#dialog-media video').forEach(video => video.pause()); document.querySelector('#dialog-media').innerHTML = ''; document.body.classList.remove('modal-open'); activeTrigger?.focus({ preventScroll: true }); });
+dialog.addEventListener('close', () => { document.querySelectorAll('#dialog-media video').forEach(video => video.pause()); document.querySelector('#dialog-media').replaceChildren(); document.body.classList.remove('modal-open'); activeTrigger?.focus({ preventScroll: true }); });
 document.querySelector('.dialog-contact').addEventListener('click', closeProject);
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
   document.querySelectorAll('[data-filter]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
@@ -181,7 +205,7 @@ function initBooks(root){
  q('.prev').onclick=()=>move(Math.round(target)-1);q('.next').onclick=()=>move(Math.round(target)+1);q('.open').onclick=show;q('.close').onclick=close;
  q('.archive').onkeydown=e=>{if(e.key==='Escape'&&!sheet.hidden){e.preventDefault();e.stopPropagation();close()}else if(sheet.hidden&&e.target!==input&&list.length&&['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();move(Math.round(target)+(e.key==='ArrowLeft'?-1:1))}};
  stage.onpointerdown=e=>{down=[e.clientX,target];dragged=false};stage.onpointermove=e=>{if(!down)return;const dx=e.clientX-down[0];if(Math.abs(dx)>7){dragged=true;stage.setPointerCapture(e.pointerId);move(down[1]-dx/45)}};stage.onpointerup=stage.onpointercancel=()=>{if(down&&dragged)move(Math.round(target));down=null};stage.onwheel=e=>{if(Math.abs(e.deltaX)>Math.abs(e.deltaY)||e.shiftKey){e.preventDefault();move(Math.round(target)+Math.sign(e.deltaX||e.deltaY))}};
- q('.ruler').onclick=e=>{const r=e.currentTarget.getBoundingClientRect(),year=1834+28*(e.clientX-r.left)/r.width;const idx=list.reduce((a,b,i)=>Math.abs(b[2]-year)<Math.abs(list[a][2]-year)?i:a,0);move(Math.round(target)+mod(idx-Math.round(target)+list.length/2,list.length)-list.length/2)};
+ q('.ruler').onclick=e=>{const r=e.currentTarget.getBoundingClientRect(),year=1834+28*(e.clientX-r.left)/r.width;if(!list.length)return;const idx=list.reduce((a,b,i)=>Math.abs(b[2]-year)<Math.abs(list[a][2]-year)?i:a,0);move(Math.round(target)+mod(idx-Math.round(target)+list.length/2,list.length)-list.length/2)};
  build();const observer=new ResizeObserver(()=>{if(stage.isConnected)draw();else observer.disconnect()});observer.observe(stage);return ()=>{observer.disconnect();cancelAnimationFrame(frame);};
 }
 const demoDialog=document.querySelector('#demo-dialog');
@@ -194,6 +218,7 @@ function openDemo(id,trigger){
   demoDialog.querySelector('strong').textContent=id==='library'?'Лист':'APEX';
   demoDialog.showModal();
   if(id==='library') stopDemo=initBooks(demoRoot); else init_apex(demoRoot);
+  const facts=document.querySelector('#demo-case');renderCase(facts,id);
   demoDialog.scrollTop=0;
   document.body.classList.add('modal-open');
 }
@@ -206,3 +231,16 @@ demoRoot.addEventListener('click',event=>{
 });
 demoDialog.querySelector('button').onclick=()=>demoDialog.close();
 demoDialog.addEventListener('close',()=>{stopDemo?.();stopDemo=null;demoRoot.replaceChildren();document.body.classList.remove('modal-open');demoTrigger?.focus({preventScroll:true});});
+
+// Keep all modal viewers consistent: lock background scrolling and restore focus.
+const markViewer=document.getElementById('mark-view');
+let markTrigger;
+document.querySelectorAll('.mark-card').forEach(button=>button.addEventListener('click',()=>{markTrigger=button;document.body.classList.add('modal-open')}));
+markViewer.addEventListener('close',()=>{document.body.classList.remove('modal-open');markTrigger?.focus({preventScroll:true})});
+// Small and monochrome previews show how each mark survives reduction.
+document.querySelectorAll('.marks-grid article').forEach(article=>{
+ const source=article.querySelector('.mark-card svg'),row=document.createElement('div');row.className='mark-samples';
+ const label=document.createElement('span');label.textContent='В малом размере / один цвет';row.append(label);
+ [false,true].forEach(mono=>{const svg=source.cloneNode(true);svg.removeAttribute('role');svg.setAttribute('aria-hidden','true');if(mono){svg.classList.add('mono');[svg,...svg.querySelectorAll('*')].forEach(el=>{['fill','stroke'].forEach(attr=>{if(el.hasAttribute(attr)&&el.getAttribute(attr)!=='none')el.setAttribute(attr,'currentColor')})})}row.append(svg)});
+ article.append(row);
+});
